@@ -27,8 +27,6 @@ from keras.layers import Dense
 from keras.utils import to_categorical
 from keras.wrappers.scikit_learn import KerasClassifier, KerasRegressor
 
-#from __future__ import print_function
-#import time,numpy as np,sys,h5py,cPickle,argparse,subprocess
 import argparse
 import _pickle
 import matplotlib.pyplot as plt
@@ -37,20 +35,6 @@ import time
 
 maxlen = 76
 
-def grid_scores_to_df(grid_scores):
-    """
-    Convert a sklearn.grid_search.GridSearchCV.grid_scores_ attribute to a tidy
-    pandas DataFrame where each row is a hyperparameter-fold combinatination.
-    """
-    rows = list()
-    for grid_score in grid_scores:
-        for fold, score in enumerate(grid_score.cv_validation_scores):
-            row = grid_score.parameters.copy()
-            row['fold'] = fold
-            row['score'] = score
-            rows.append(row)
-    df = pd.DataFrame(rows)
-    return df
 
 def create_model(dense_layers=[16,8,4],
                  activation=['relu','relu','relu'],
@@ -60,7 +44,7 @@ def create_model(dense_layers=[16,8,4],
 #mirs_branch.add(Dense(64))
     model.add(Activation(activation[0]))
     model.add(MaxPooling1D(pool_size=3,padding='same'))
-    model.add(Dropout(0.25))
+    #model.add(Dropout(0.25))
 
     for index, lsize in enumerate(dense_layers):
         # Input Layer - includes the input_shape
@@ -84,17 +68,20 @@ def search_params(diry,x_train,y_train,x_test,y_test):
     #x_train = x_train.reshape(x_train.shape[0],-1)    
     #y_train = y_train.reshape(y_train.shape[0],1)  
     accuracies = []
-    epochs = 100
-    with open(diry+'search_params.txt','w') as f, open(diry+'search_models.txt','w') as f2:
+    epochs = 300
+    with open(diry+'search_params.txt','w') as f:#, open(diry+'search_models.txt','w') as f2:
         
-        for den in [[32,8,4],[32,8],[8,8],[16,4]]:
-            for act in [['relu','relu','relu'],['relu','relu','sigmoid'],['tanh','tanh','relu']]:
-                sgd_lr0001_dec1e6_m09= SGD(lr=0.001, decay=1e-6, momentum=0.9, nesterov=True)
-                for opt in [sgd_lr0001_dec1e6_m09,'rmsprop','adam']:
+        for den in [[32,16,8,8],[32,32,16,16,8,4]]:
+        #[[64,32,32,16],[64,32,16],[64,32,8],[64,16,16,4],[64,32,16,8,8]]: 
+        #[[32,8,4],[32,8],[8,8],[16,4]]:
+            for act in [['relu','relu','sigmoid']]:
+            #[['relu','relu','relu']]:#,['relu','relu','sigmoid'],['tanh','tanh','relu']]:
+                sgd_lr0001_dec1e6_m095= SGD(lr=0.001, decay=1e-6, momentum=0.95, nesterov=True)
+                for opt in [sgd_lr0001_dec1e6_m095,'adam']:# [sgd_lr0001_dec1e6_m09,'rmsprop','adam']:
                     start_time = time.time()
                     model = create_model(den,act,opt)
                     # Pass the file handle in as a lambda function to make it callable
-                    model.summary(print_fn=lambda x: f2.write(x + '\n'))
+                    model.summary(print_fn=lambda x: f.write(x + '\n'))
                     history = model.fit(x_train, y_train,
                     epochs=epochs,
                     batch_size=50,
@@ -102,8 +89,8 @@ def search_params(diry,x_train,y_train,x_test,y_test):
                     validation_split=0.3)
                     #train_time = time.time()
                     
-                    if opt==sgd_lr0001_dec1e6_m09:
-                        opt='sgd_lr0001_dec1e6_m09'
+                    if opt==sgd_lr0001_dec1e6_m095:
+                        opt='sgd_lr0001_dec1e6_m095'
                     f.write('\ndense layers: %s\n activations: %s\n optimizer: %s '%(str(den),str(act),str(opt)))
                     f.write('\nTraining duration (s) : '+ str(time.time() - start_time))                    
                     f.write("\n Final validation accuracy: \n")
@@ -114,7 +101,7 @@ def search_params(diry,x_train,y_train,x_test,y_test):
                     plt.title('dense layers: %s\n activations: %s\n optimizer: %s \n accuracy'%(str(den),str(act),str(opt)))
                     plt.ylabel('accuracy')
                     plt.xlabel('epoch')
-                    plt.legend(['train', 'validation'], loc='upper left')
+                    plt.legend(['train', 'validation'])
                     plt.savefig(diry+'accuracy_%s%s%s.png'%(str(den),str(act),str(opt)))
                     #plt.show()
                     plt.clf()
@@ -124,7 +111,7 @@ def search_params(diry,x_train,y_train,x_test,y_test):
                     plt.title('dense layers: %s\n activations: %s\n optimizer: %s \n loss'%(str(den),str(act),str(opt)))
                     plt.ylabel('loss')
                     plt.xlabel('epoch')
-                    plt.legend(['train', 'validation'], loc='upper left')
+                    plt.legend(['train', 'validation'])
                     plt.savefig(diry+'loss_%s%s%s.png'%(str(den),str(act),str(opt)))
                     #plt.show()
                     plt.clf()
@@ -150,9 +137,10 @@ def search_params(diry,x_train,y_train,x_test,y_test):
                     f.write('0   '+str(cnf_matrix[0]))
                     f.write('\n1   '+str(cnf_matrix[1]))
                     f.write("\n *************************************************** \n \n")
-    f.write("\n Final test accuracies: "+str(accuracies))
+        print("\n Final test accuracies: ",accuracies)
+        f.write("\n Final test accuracies: "+str(accuracies))
     f.close()
-    print("\n Final test accuracies: ",accuracies)
+    
     #return model
 
 
@@ -239,10 +227,6 @@ def full_multiclass_report(diry,model, x, y_true, classes, binary=True,normalize
     cnf_matrix = confusion_matrix(y_true,y_pred)
     print(cnf_matrix)
     #plot_confusion_matrix(cnf_matrix,classes=classes)
-    """
-    This function prints and plots the confusion matrix.
-    Normalization can be applied by setting `normalize=True`.
-    """
     cm = cnf_matrix
     cmap=plt.cm.Blues
     if normalize:

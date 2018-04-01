@@ -62,20 +62,21 @@ def organism_experimental(diry,organism,target_column,replace): #'Target Site' -
     rawtxt = pd.read_csv('miRNA_targets_%s.txt'%(organism),sep='\t',engine='c',error_bad_lines=False)
     mirwalk = pd.read_csv('%s_miRWalk_3UTR.txt'%(organism),sep='\t',engine='c',error_bad_lines=False)
     mtbase= pd.read_excel('MicroRNA_Target_Sites.xlsx',sep='\t')
-    mtb = mtbase[mtbase['Species (Target Gene)']=='Homo sapiens']
+    if organism=='hsa':
+        mtb = mtbase[mtbase['Species (Target Gene)']=='Homo sapiens']
     mtb = mtb.drop(['Experiments','Support Type','References (PMID)'],axis=1)
     mtb['Genesymbol']=mtb['Target Gene']
     result = pd.merge(mirwalk, mtb, on=['Genesymbol', 'miRNA'])
     rawtxt['miRNA']= rawtxt['mature miRNA']
     rawtxt['mRNA']= rawtxt['Ensembl transcript ID']
-    result2 = pd.merge(rawtxt, result, on=['mRNA', 'miRNA'])
+    #result2 = pd.merge(rawtxt, result, on=['mRNA', 'miRNA'])
     result3 = pd.merge(rawtxt, result, on=['mRNA'])
     result3 =result3.drop(['tool name','criterion 1','criterion 2','criterion 3','target start',
                        'tsrget end','binding_site','binding_probability','miRTarBase ID','Species (miRNA)',
                        'Target Gene','Target Gene (Entrez Gene ID)','Species (Target Gene)',
                         'Ensembl transcript ID','miRNA_x','miRNA_y','Genesymbol'],axis=1)
     result3 = result3.drop_duplicates()
-    alignment_for_train(diry,result3,organism,target_column,replace)
+    return alignment_for_train(diry,result3,organism,target_column,replace)
 
 def alignment_for_train(diry,result3,name,target_column,replace):
     
