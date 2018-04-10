@@ -71,13 +71,14 @@ def search_params(diry,x_train,y_train,x_test,y_test):
     epochs = 300
     with open(diry+'search_params.txt','w') as f:#, open(diry+'search_models.txt','w') as f2:
         
-        for den in [[32,16,8,8],[32,32,16,16,8,4]]:
+        for den in [[64,32,8]]:
+        #[[32,16,8,8],[32,32,16,16,8,4]]:
         #[[64,32,32,16],[64,32,16],[64,32,8],[64,16,16,4],[64,32,16,8,8]]: 
         #[[32,8,4],[32,8],[8,8],[16,4]]:
             for act in [['relu','relu','sigmoid']]:
             #[['relu','relu','relu']]:#,['relu','relu','sigmoid'],['tanh','tanh','relu']]:
                 sgd_lr0001_dec1e6_m095= SGD(lr=0.001, decay=1e-6, momentum=0.95, nesterov=True)
-                for opt in [sgd_lr0001_dec1e6_m095,'adam']:# [sgd_lr0001_dec1e6_m09,'rmsprop','adam']:
+                for opt in ['adam']:# [sgd_lr0001_dec1e6_m09,'rmsprop','adam']:
                     start_time = time.time()
                     model = create_model(den,act,opt)
                     # Pass the file handle in as a lambda function to make it callable
@@ -153,10 +154,13 @@ def train_model(diry,alin, y_target):
     model.add(Activation('relu'))
     model.add(MaxPooling1D(pool_size=3,padding='same'))
     model.add(Dropout(0.25))
+    model.add(Dense(64))
+    model.add(Activation('relu'))
+    model.add(Dropout(0.25))
     model.add(Dense(32))
     model.add(Activation('relu'))
-    model.add(Dropout(0.5))
-    model.add(Dense(16))
+    model.add(Dropout(0.25))
+    model.add(Dense(8))
     model.add(Activation('relu'))
 #model.add(Dropout(0.5))
 #model.add(Dense(2))
@@ -173,7 +177,7 @@ def train_model(diry,alin, y_target):
 # train the model
     history = model.fit(alin, y_target,
               batch_size=50,
-              epochs=100,
+              epochs=300,
               validation_split=0.3)
     with open(diry+'history.pickle', 'wb') as f:
         _pickle.dump(history.history, f)

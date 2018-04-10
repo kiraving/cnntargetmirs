@@ -62,8 +62,14 @@ def organism_experimental(diry,organism,target_column,replace): #'Target Site' -
     rawtxt = pd.read_csv('miRNA_targets_%s.txt'%(organism),sep='\t',engine='c',error_bad_lines=False)
     mirwalk = pd.read_csv('%s_miRWalk_3UTR.txt'%(organism),sep='\t',engine='c',error_bad_lines=False)
     mtbase= pd.read_excel('MicroRNA_Target_Sites.xlsx',sep='\t')
+    
     if organism=='hsa':
         mtb = mtbase[mtbase['Species (Target Gene)']=='Homo sapiens']
+    if organism=='rno':
+        mtb = mtbase[mtbase['Species (Target Gene)']=='Rattus norvegicus']
+    if organism=='mmu':
+        mtb = mtbase[mtbase['Species (Target Gene)']=='Mus musculus']
+        
     mtb = mtb.drop(['Experiments','Support Type','References (PMID)'],axis=1)
     mtb['Genesymbol']=mtb['Target Gene']
     result = pd.merge(mirwalk, mtb, on=['Genesymbol', 'miRNA'])

@@ -51,7 +51,7 @@ def parse_args():
     parser.add_argument("-pr", "--prepare_mirnamap", nargs=1, help="Input: miRNAmap table.txt. Output: alignment.npy, y_target.npy.")
     parser.add_argument("--criterion",default=False, choices=['TargetScan', 'miRanda', 'RNAhybrid','MicroTar',
     'criterion13'], help="Available only for -pr _miRNAmap table.txt_") 
-    parser.add_argument("-pr_org", "--prepare_organism", nargs=3, help="Input: organism [hsa, mmu],target_column ['Target Site' without alignment dashes, 'target 5-3' - with '-' for gaps], replace [True,False]")
+    parser.add_argument("-pr_org", "--prepare_organism", nargs=3, help="Input: organism [hsa, mmu, rno],target_column ['Target Site' without alignment dashes, 'target 5-3' - with '-' for gaps], replace [True,False]")
     
     parser.add_argument("-loadt","--load_traintest_2npy",nargs=2, default=['alignment.npy', 'y_target.npy'],help="The data directory. Input: alignment.npy, y_target.npy.")    
     parser.add_argument("-tr", "--train_2npy", default=False, action='store_true', help="Input: alignment.npy, y_target.npy. Train-test split, train and evaluate")
