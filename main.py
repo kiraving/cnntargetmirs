@@ -10,23 +10,7 @@ import numpy as np
 from sklearn.utils import shuffle
 from numpy.random import permutation
 
-import keras
-from keras.utils import np_utils,plot_model
 from keras.models import Sequential
-from keras.layers import Dense, Dropout, Activation, Flatten, Reshape, Merge
-from keras.layers import Conv2D,Conv1D, MaxPooling2D, MaxPooling1D
-from keras.optimizers import SGD, RMSprop
-
-import itertools
-from sklearn import datasets
-from sklearn.preprocessing import LabelEncoder
-#from sklearn.model_selection import train_test_split, KFold, GridSearchCV
-from sklearn.metrics import confusion_matrix, classification_report, accuracy_score
-from keras.models import Sequential
-from keras.layers import Dense
-from keras.utils import to_categorical
-from keras.wrappers.scikit_learn import KerasClassifier
-
 
 import argparse
 import _pickle
