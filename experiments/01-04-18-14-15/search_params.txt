@@ -1,0 +1,936 @@
+
+dense layers: [32, 8, 4]
+ activations: ['relu', 'relu', 'relu']
+ optimizer: sgd_lr0001_dec1e6_m09 
+Training duration (s) : 434.5328748226166
+ Final validation accuracy: 
+0.8484326903031875
+ *************************************************** 
+ 
+Test accuracy : 0.8452112133061629
+Testing duration (s) : 0.7006654739379883
+Classification Report
+             precision    recall  f1-score   support
+
+        0.0    0.85419   0.83299   0.84346     18179
+        1.0    0.83665   0.85746   0.84693     18135
+
+avg / total    0.84543   0.84521   0.84519     36314
+
+Confusion_matrix
+true| predicted label
+    |  0    1
+0   [15143  3036]
+1   [ 2585 15550]
+ *************************************************** 
+ 
+
+dense layers: [32, 8, 4]
+ activations: ['relu', 'relu', 'relu']
+ optimizer: rmsprop 
+Training duration (s) : 441.8855974674225
+ Final validation accuracy: 
+0.8532286884288034
+ *************************************************** 
+ 
+Test accuracy : 0.8492867764498541
+Testing duration (s) : 0.7186062335968018
+Classification Report
+             precision    recall  f1-score   support
+
+        0.0    0.82496   0.88718   0.85494     18179
+        1.0    0.87765   0.81130   0.84318     18135
+
+avg / total    0.85128   0.84929   0.84906     36314
+
+Confusion_matrix
+true| predicted label
+    |  0    1
+0   [16128  2051]
+1   [ 3422 14713]
+ *************************************************** 
+ 
+
+dense layers: [32, 8, 4]
+ activations: ['relu', 'relu', 'relu']
+ optimizer: adam 
+Training duration (s) : 464.4556202888489
+ Final validation accuracy: 
+0.8505208993949428
+ *************************************************** 
+ 
+Test accuracy : 0.8498099906372198
+Testing duration (s) : 0.7545547485351562
+Classification Report
+             precision    recall  f1-score   support
+
+        0.0    0.82384   0.89037   0.85581     18179
+        1.0    0.88042   0.80915   0.84328     18135
+
+avg / total    0.85210   0.84981   0.84956     36314
+
+Confusion_matrix
+true| predicted label
+    |  0    1
+0   [16186  1993]
+1   [ 3461 14674]
+ *************************************************** 
+ 
+
+dense layers: [32, 8, 4]
+ activations: ['relu', 'relu', 'sigmoid']
+ optimizer: sgd_lr0001_dec1e6_m09 
+Training duration (s) : 435.5041346549988
+ Final validation accuracy: 
+0.8479966902077414
+ *************************************************** 
+ 
+Test accuracy : 0.846395329624938
+Testing duration (s) : 0.7819807529449463
+Classification Report
+             precision    recall  f1-score   support
+
+        0.0    0.80688   0.91127   0.85590     18179
+        1.0    0.89780   0.78136   0.83554     18135
+
+avg / total    0.85228   0.84640   0.84574     36314
+
+Confusion_matrix
+true| predicted label
+    |  0    1
+0   [16566  1613]
+1   [ 3965 14170]
+ *************************************************** 
+ 
+
+dense layers: [32, 8, 4]
+ activations: ['relu', 'relu', 'sigmoid']
+ optimizer: rmsprop 
+Training duration (s) : 446.94892048835754
+ Final validation accuracy: 
+0.8490981628564462
+ *************************************************** 
+ 
+Test accuracy : 0.8479374345982266
+Testing duration (s) : 0.8195586204528809
+Classification Report
+             precision    recall  f1-score   support
+
+        0.0    0.81870   0.89427   0.85482     18179
+        1.0    0.88321   0.80149   0.84037     18135
+
+avg / total    0.85092   0.84794   0.84760     36314
+
+Confusion_matrix
+true| predicted label
+    |  0    1
+0   [16257  1922]
+1   [ 3600 14535]
+ *************************************************** 
+ 
+
+dense layers: [32, 8, 4]
+ activations: ['relu', 'relu', 'sigmoid']
+ optimizer: adam 
+Training duration (s) : 468.5774862766266
+ Final validation accuracy: 
+0.8521731093486905
+ *************************************************** 
+ 
+Test accuracy : 0.8475519083549045
+Testing duration (s) : 0.8356194496154785
+Classification Report
+             precision    recall  f1-score   support
+
+        0.0    0.84261   0.85522   0.84887     18179
+        1.0    0.85266   0.83987   0.84621     18135
+
+avg / total    0.84763   0.84755   0.84754     36314
+
+Confusion_matrix
+true| predicted label
+    |  0    1
+0   [15547  2632]
+1   [ 2904 15231]
+ *************************************************** 
+ 
+
+dense layers: [32, 8, 4]
+ activations: ['tanh', 'tanh', 'relu']
+ optimizer: sgd_lr0001_dec1e6_m09 
+Training duration (s) : 440.0250720977783
+ Final validation accuracy: 
+0.8464362688300707
+ *************************************************** 
+ 
+Test accuracy : 0.8424574544252905
+Testing duration (s) : 0.8506026268005371
+Classification Report
+             precision    recall  f1-score   support
+
+        0.0    0.82521   0.86946   0.84676     18179
+        1.0    0.86171   0.81538   0.83791     18135
+
+avg / total    0.84344   0.84246   0.84234     36314
+
+Confusion_matrix
+true| predicted label
+    |  0    1
+0   [15806  2373]
+1   [ 3348 14787]
+ *************************************************** 
+ 
+
+dense layers: [32, 8, 4]
+ activations: ['tanh', 'tanh', 'relu']
+ optimizer: rmsprop 
+Training duration (s) : 457.7352178096771
+ Final validation accuracy: 
+0.8521960556515317
+ *************************************************** 
+ 
+Test accuracy : 0.848901250206532
+Testing duration (s) : 0.8821461200714111
+Classification Report
+             precision    recall  f1-score   support
+
+        0.0    0.84918   0.84895   0.84906     18179
+        1.0    0.84862   0.84886   0.84874     18135
+
+avg / total    0.84890   0.84890   0.84890     36314
+
+Confusion_matrix
+true| predicted label
+    |  0    1
+0   [15433  2746]
+1   [ 2741 15394]
+ *************************************************** 
+ 
+
+dense layers: [32, 8, 4]
+ activations: ['tanh', 'tanh', 'relu']
+ optimizer: adam 
+Training duration (s) : 479.55346870422363
+ Final validation accuracy: 
+0.8521272150278255
+ *************************************************** 
+ 
+Test accuracy : 0.8479649721870353
+Testing duration (s) : 0.9204814434051514
+Classification Report
+             precision    recall  f1-score   support
+
+        0.0    0.84517   0.85247   0.84880     18179
+        1.0    0.85082   0.84345   0.84712     18135
+
+avg / total    0.84799   0.84796   0.84796     36314
+
+Confusion_matrix
+true| predicted label
+    |  0    1
+0   [15497  2682]
+1   [ 2839 15296]
+ *************************************************** 
+ 
+
+dense layers: [32, 8]
+ activations: ['relu', 'relu', 'relu']
+ optimizer: sgd_lr0001_dec1e6_m09 
+Training duration (s) : 427.4097876548767
+ Final validation accuracy: 
+0.8467345850383099
+ *************************************************** 
+ 
+Test accuracy : 0.8463127168585118
+Testing duration (s) : 0.8845856189727783
+Classification Report
+             precision    recall  f1-score   support
+
+        0.0    0.80718   0.91050   0.85573     18179
+        1.0    0.89708   0.78197   0.83558     18135
+
+avg / total    0.85207   0.84631   0.84567     36314
+
+Confusion_matrix
+true| predicted label
+    |  0    1
+0   [16552  1627]
+1   [ 3954 14181]
+ *************************************************** 
+ 
+
+dense layers: [32, 8]
+ activations: ['relu', 'relu', 'relu']
+ optimizer: rmsprop 
+Training duration (s) : 441.43313217163086
+ Final validation accuracy: 
+0.825990173559978
+ *************************************************** 
+ 
+Test accuracy : 0.8241724954562979
+Testing duration (s) : 0.9239575862884521
+Classification Report
+             precision    recall  f1-score   support
+
+        0.0    0.76040   0.94725   0.84360     18179
+        1.0    0.92984   0.70080   0.79923     18135
+
+avg / total    0.84502   0.82417   0.82144     36314
+
+Confusion_matrix
+true| predicted label
+    |  0    1
+0   [17220   959]
+1   [ 5426 12709]
+ *************************************************** 
+ 
+
+dense layers: [32, 8]
+ activations: ['relu', 'relu', 'relu']
+ optimizer: adam 
+Training duration (s) : 459.8500118255615
+ Final validation accuracy: 
+0.8526779523438106
+ *************************************************** 
+ 
+Test accuracy : 0.8507462686567164
+Testing duration (s) : 0.9290239810943604
+Classification Report
+             precision    recall  f1-score   support
+
+        0.0    0.83159   0.88008   0.85515     18179
+        1.0    0.87233   0.82134   0.84607     18135
+
+avg / total    0.85194   0.85075   0.85061     36314
+
+Confusion_matrix
+true| predicted label
+    |  0    1
+0   [15999  2180]
+1   [ 3240 14895]
+ *************************************************** 
+ 
+
+dense layers: [32, 8]
+ activations: ['relu', 'relu', 'sigmoid']
+ optimizer: sgd_lr0001_dec1e6_m09 
+Training duration (s) : 434.56777811050415
+ Final validation accuracy: 
+0.8513928984013468
+ *************************************************** 
+ 
+Test accuracy : 0.8502505920581593
+Testing duration (s) : 0.9569377899169922
+Classification Report
+             precision    recall  f1-score   support
+
+        0.0    0.82481   0.88987   0.85611     18179
+        1.0    0.88013   0.81053   0.84390     18135
+
+avg / total    0.85243   0.85025   0.85001     36314
+
+Confusion_matrix
+true| predicted label
+    |  0    1
+0   [16177  2002]
+1   [ 3436 14699]
+ *************************************************** 
+ 
+
+dense layers: [32, 8]
+ activations: ['relu', 'relu', 'sigmoid']
+ optimizer: rmsprop 
+Training duration (s) : 448.89411759376526
+ Final validation accuracy: 
+0.8348249063375178
+ *************************************************** 
+ 
+Test accuracy : 0.8343889409043345
+Testing duration (s) : 0.9691736698150635
+Classification Report
+             precision    recall  f1-score   support
+
+        0.0    0.77768   0.93707   0.84997     18179
+        1.0    0.92061   0.73146   0.81520     18135
+
+avg / total    0.84905   0.83439   0.83261     36314
+
+Confusion_matrix
+true| predicted label
+    |  0    1
+0   [17035  1144]
+1   [ 4870 13265]
+ *************************************************** 
+ 
+
+dense layers: [32, 8]
+ activations: ['relu', 'relu', 'sigmoid']
+ optimizer: adam 
+Training duration (s) : 470.6568946838379
+ Final validation accuracy: 
+0.8445545863364441
+ *************************************************** 
+ 
+Test accuracy : 0.8444126232307099
+Testing duration (s) : 0.9985799789428711
+Classification Report
+             precision    recall  f1-score   support
+
+        0.0    0.80453   0.91039   0.85419     18179
+        1.0    0.89653   0.77827   0.83323     18135
+
+avg / total    0.85047   0.84441   0.84372     36314
+
+Confusion_matrix
+true| predicted label
+    |  0    1
+0   [16550  1629]
+1   [ 4021 14114]
+ *************************************************** 
+ 
+
+dense layers: [32, 8]
+ activations: ['tanh', 'tanh', 'relu']
+ optimizer: sgd_lr0001_dec1e6_m09 
+Training duration (s) : 445.40008664131165
+ Final validation accuracy: 
+0.8463674275717197
+ *************************************************** 
+ 
+Test accuracy : 0.8424299168364818
+Testing duration (s) : 1.0278875827789307
+Classification Report
+             precision    recall  f1-score   support
+
+        0.0    0.82832   0.86440   0.84598     18179
+        1.0    0.85787   0.82040   0.83872     18135
+
+avg / total    0.84307   0.84243   0.84235     36314
+
+Confusion_matrix
+true| predicted label
+    |  0    1
+0   [15714  2465]
+1   [ 3257 14878]
+ *************************************************** 
+ 
+
+dense layers: [32, 8]
+ activations: ['tanh', 'tanh', 'relu']
+ optimizer: rmsprop 
+Training duration (s) : 462.01876997947693
+ Final validation accuracy: 
+0.8525402679614713
+ *************************************************** 
+ 
+Test accuracy : 0.8472214572891997
+Testing duration (s) : 1.0589637756347656
+Classification Report
+             precision    recall  f1-score   support
+
+        0.0    0.84011   0.85813   0.84903     18179
+        1.0    0.85466   0.83628   0.84537     18135
+
+avg / total    0.84738   0.84722   0.84720     36314
+
+Confusion_matrix
+true| predicted label
+    |  0    1
+0   [15600  2579]
+1   [ 2969 15166]
+ *************************************************** 
+ 
+
+dense layers: [32, 8]
+ activations: ['tanh', 'tanh', 'relu']
+ optimizer: adam 
+Training duration (s) : 483.1577363014221
+ Final validation accuracy: 
+0.8529762678599586
+ *************************************************** 
+ 
+Test accuracy : 0.8491490885058104
+Testing duration (s) : 1.0830144882202148
+Classification Report
+             precision    recall  f1-score   support
+
+        0.0    0.84662   0.85324   0.84992     18179
+        1.0    0.85172   0.84505   0.84837     18135
+
+avg / total    0.84917   0.84915   0.84915     36314
+
+Confusion_matrix
+true| predicted label
+    |  0    1
+0   [15511  2668]
+1   [ 2810 15325]
+ *************************************************** 
+ 
+
+dense layers: [8, 8]
+ activations: ['relu', 'relu', 'relu']
+ optimizer: sgd_lr0001_dec1e6_m09 
+Training duration (s) : 437.03594422340393
+ Final validation accuracy: 
+0.8520124783926918
+ *************************************************** 
+ 
+Test accuracy : 0.848488186374401
+Testing duration (s) : 1.118776559829712
+Classification Report
+             precision    recall  f1-score   support
+
+        0.0    0.84003   0.86138   0.85057     18179
+        1.0    0.85741   0.83557   0.84635     18135
+
+avg / total    0.84871   0.84849   0.84846     36314
+
+Confusion_matrix
+true| predicted label
+    |  0    1
+0   [15659  2520]
+1   [ 2982 15153]
+ *************************************************** 
+ 
+
+dense layers: [8, 8]
+ activations: ['relu', 'relu', 'relu']
+ optimizer: rmsprop 
+Training duration (s) : 452.8961727619171
+ Final validation accuracy: 
+0.8459543748322971
+ *************************************************** 
+ 
+Test accuracy : 0.8445778487635622
+Testing duration (s) : 1.1253314018249512
+Classification Report
+             precision    recall  f1-score   support
+
+        0.0    0.82761   0.87095   0.84873     18179
+        1.0    0.86347   0.81814   0.84019     18135
+
+avg / total    0.84552   0.84458   0.84447     36314
+
+Confusion_matrix
+true| predicted label
+    |  0    1
+0   [15833  2346]
+1   [ 3298 14837]
+ *************************************************** 
+ 
+
+dense layers: [8, 8]
+ activations: ['relu', 'relu', 'relu']
+ optimizer: adam 
+Training duration (s) : 475.13362526893616
+ Final validation accuracy: 
+0.8515764784531714
+ *************************************************** 
+ 
+Test accuracy : 0.8483504984303575
+Testing duration (s) : 1.1972754001617432
+Classification Report
+             precision    recall  f1-score   support
+
+        0.0    0.83386   0.87051   0.85179     18179
+        1.0    0.86421   0.82614   0.84475     18135
+
+avg / total    0.84902   0.84835   0.84827     36314
+
+Confusion_matrix
+true| predicted label
+    |  0    1
+0   [15825  2354]
+1   [ 3153 14982]
+ *************************************************** 
+ 
+
+dense layers: [8, 8]
+ activations: ['relu', 'relu', 'sigmoid']
+ optimizer: sgd_lr0001_dec1e6_m09 
+Training duration (s) : 458.34885716438293
+ Final validation accuracy: 
+0.8545366867674382
+ *************************************************** 
+ 
+Test accuracy : 0.849782453048411
+Testing duration (s) : 1.1625950336456299
+Classification Report
+             precision    recall  f1-score   support
+
+        0.0    0.84486   0.85736   0.85107     18179
+        1.0    0.85486   0.84218   0.84848     18135
+
+avg / total    0.84986   0.84978   0.84977     36314
+
+Confusion_matrix
+true| predicted label
+    |  0    1
+0   [15586  2593]
+1   [ 2862 15273]
+ *************************************************** 
+ 
+
+dense layers: [8, 8]
+ activations: ['relu', 'relu', 'sigmoid']
+ optimizer: rmsprop 
+Training duration (s) : 466.3386216163635
+ Final validation accuracy: 
+0.8528156355443973
+ *************************************************** 
+ 
+Test accuracy : 0.8494520019827064
+Testing duration (s) : 1.1654224395751953
+Classification Report
+             precision    recall  f1-score   support
+
+        0.0    0.82531   0.88701   0.85505     18179
+        1.0    0.87756   0.81180   0.84340     18135
+
+avg / total    0.85141   0.84945   0.84923     36314
+
+Confusion_matrix
+true| predicted label
+    |  0    1
+0   [16125  2054]
+1   [ 3413 14722]
+ *************************************************** 
+ 
+
+dense layers: [8, 8]
+ activations: ['relu', 'relu', 'sigmoid']
+ optimizer: adam 
+Training duration (s) : 483.70280838012695
+ Final validation accuracy: 
+0.8531598458710716
+ *************************************************** 
+ 
+Test accuracy : 0.8498375282260285
+Testing duration (s) : 1.2002804279327393
+Classification Report
+             precision    recall  f1-score   support
+
+        0.0    0.83092   0.87887   0.85423     18179
+        1.0    0.87112   0.82073   0.84518     18135
+
+avg / total    0.85100   0.84984   0.84971     36314
+
+Confusion_matrix
+true| predicted label
+    |  0    1
+0   [15977  2202]
+1   [ 3251 14884]
+ *************************************************** 
+ 
+
+dense layers: [8, 8]
+ activations: ['tanh', 'tanh', 'relu']
+ optimizer: sgd_lr0001_dec1e6_m09 
+Training duration (s) : 455.54381823539734
+ Final validation accuracy: 
+0.8458396388236015
+ *************************************************** 
+ 
+Test accuracy : 0.8430357437902737
+Testing duration (s) : 1.2162213325500488
+Classification Report
+             precision    recall  f1-score   support
+
+        0.0    0.81391   0.88993   0.85022     18179
+        1.0    0.87826   0.79603   0.83513     18135
+
+avg / total    0.84604   0.84304   0.84268     36314
+
+Confusion_matrix
+true| predicted label
+    |  0    1
+0   [16178  2001]
+1   [ 3699 14436]
+ *************************************************** 
+ 
+
+dense layers: [8, 8]
+ activations: ['tanh', 'tanh', 'relu']
+ optimizer: rmsprop 
+Training duration (s) : 473.127738237381
+ Final validation accuracy: 
+0.8512781626060232
+ *************************************************** 
+ 
+Test accuracy : 0.8487635622624883
+Testing duration (s) : 1.26668381690979
+Classification Report
+             precision    recall  f1-score   support
+
+        0.0    0.82291   0.88927   0.85480     18179
+        1.0    0.87924   0.80816   0.84220     18135
+
+avg / total    0.85104   0.84876   0.84851     36314
+
+Confusion_matrix
+true| predicted label
+    |  0    1
+0   [16166  2013]
+1   [ 3479 14656]
+ *************************************************** 
+ 
+
+dense layers: [8, 8]
+ activations: ['tanh', 'tanh', 'relu']
+ optimizer: adam 
+Training duration (s) : 496.9779281616211
+ Final validation accuracy: 
+0.8526091091021942
+ *************************************************** 
+ 
+Test accuracy : 0.8488737126177232
+Testing duration (s) : 1.2758607864379883
+Classification Report
+             precision    recall  f1-score   support
+
+        0.0    0.83672   0.86737   0.85177     18179
+        1.0    0.86198   0.83033   0.84586     18135
+
+avg / total    0.84934   0.84887   0.84882     36314
+
+Confusion_matrix
+true| predicted label
+    |  0    1
+0   [15768  2411]
+1   [ 3077 15058]
+ *************************************************** 
+ 
+
+dense layers: [16, 4]
+ activations: ['relu', 'relu', 'relu']
+ optimizer: sgd_lr0001_dec1e6_m09 
+Training duration (s) : 478.8636665344238
+ Final validation accuracy: 
+0.8522190052452255
+ *************************************************** 
+ 
+Test accuracy : 0.848901250206532
+Testing duration (s) : 1.3072667121887207
+Classification Report
+             precision    recall  f1-score   support
+
+        0.0    0.84674   0.85247   0.84959     18179
+        1.0    0.85110   0.84533   0.84820     18135
+
+avg / total    0.84892   0.84890   0.84890     36314
+
+Confusion_matrix
+true| predicted label
+    |  0    1
+0   [15497  2682]
+1   [ 2805 15330]
+ *************************************************** 
+ 
+
+dense layers: [16, 4]
+ activations: ['relu', 'relu', 'relu']
+ optimizer: rmsprop 
+Training duration (s) : 494.36809730529785
+ Final validation accuracy: 
+0.8475147955780584
+ *************************************************** 
+ 
+Test accuracy : 0.8428980558462301
+Testing duration (s) : 1.3146026134490967
+Classification Report
+             precision    recall  f1-score   support
+
+        0.0    0.84840   0.83547   0.84188     18179
+        1.0    0.83755   0.85034   0.84390     18135
+
+avg / total    0.84298   0.84290   0.84289     36314
+
+Confusion_matrix
+true| predicted label
+    |  0    1
+0   [15188  2991]
+1   [ 2714 15421]
+ *************************************************** 
+ 
+
+dense layers: [16, 4]
+ activations: ['relu', 'relu', 'relu']
+ optimizer: adam 
+Training duration (s) : 507.6855032444
+ Final validation accuracy: 
+0.8503602676948776
+ *************************************************** 
+ 
+Test accuracy : 0.8495621523379413
+Testing duration (s) : 1.3369951248168945
+Classification Report
+             precision    recall  f1-score   support
+
+        0.0    0.82147   0.89372   0.85607     18179
+        1.0    0.88316   0.80529   0.84243     18135
+
+avg / total    0.85228   0.84956   0.84926     36314
+
+Confusion_matrix
+true| predicted label
+    |  0    1
+0   [16247  1932]
+1   [ 3531 14604]
+ *************************************************** 
+ 
+
+dense layers: [16, 4]
+ activations: ['relu', 'relu', 'sigmoid']
+ optimizer: sgd_lr0001_dec1e6_m09 
+Training duration (s) : 481.7880003452301
+ Final validation accuracy: 
+0.8497865830310757
+ *************************************************** 
+ 
+Test accuracy : 0.8495621523379413
+Testing duration (s) : 1.362231969833374
+Classification Report
+             precision    recall  f1-score   support
+
+        0.0    0.81506   0.90478   0.85758     18179
+        1.0    0.89271   0.79421   0.84058     18135
+
+avg / total    0.85384   0.84956   0.84909     36314
+
+Confusion_matrix
+true| predicted label
+    |  0    1
+0   [16448  1731]
+1   [ 3732 14403]
+ *************************************************** 
+ 
+
+dense layers: [16, 4]
+ activations: ['relu', 'relu', 'sigmoid']
+ optimizer: rmsprop 
+Training duration (s) : 500.7350540161133
+ Final validation accuracy: 
+0.8503143739785666
+ *************************************************** 
+ 
+Test accuracy : 0.84829542325274
+Testing duration (s) : 1.3879046440124512
+Classification Report
+             precision    recall  f1-score   support
+
+        0.0    0.81424   0.90296   0.85631     18179
+        1.0    0.89080   0.79349   0.83934     18135
+
+avg / total    0.85247   0.84830   0.84783     36314
+
+Confusion_matrix
+true| predicted label
+    |  0    1
+0   [16415  1764]
+1   [ 3745 14390]
+ *************************************************** 
+ 
+
+dense layers: [16, 4]
+ activations: ['relu', 'relu', 'sigmoid']
+ optimizer: adam 
+Training duration (s) : 519.5929386615753
+ Final validation accuracy: 
+0.8525632137363537
+ *************************************************** 
+ 
+Test accuracy : 0.8523159112188137
+Testing duration (s) : 1.422443151473999
+Classification Report
+             precision    recall  f1-score   support
+
+        0.0    0.83585   0.87728   0.85606     18179
+        1.0    0.87055   0.82730   0.84837     18135
+
+avg / total    0.85318   0.85232   0.85222     36314
+
+Confusion_matrix
+true| predicted label
+    |  0    1
+0   [15948  2231]
+1   [ 3132 15003]
+ *************************************************** 
+ 
+
+dense layers: [16, 4]
+ activations: ['tanh', 'tanh', 'relu']
+ optimizer: sgd_lr0001_dec1e6_m09 
+Training duration (s) : 495.3772850036621
+ Final validation accuracy: 
+0.8461609012772356
+ *************************************************** 
+ 
+Test accuracy : 0.8418240898826899
+Testing duration (s) : 1.449439287185669
+Classification Report
+             precision    recall  f1-score   support
+
+        0.0    0.81384   0.88690   0.84880     18179
+        1.0    0.87542   0.79664   0.83417     18135
+
+avg / total    0.84459   0.84182   0.84150     36314
+
+Confusion_matrix
+true| predicted label
+    |  0    1
+0   [16123  2056]
+1   [ 3688 14447]
+ *************************************************** 
+ 
+
+dense layers: [16, 4]
+ activations: ['tanh', 'tanh', 'relu']
+ optimizer: rmsprop 
+Training duration (s) : 516.326030254364
+ Final validation accuracy: 
+0.8524943721442669
+ *************************************************** 
+ 
+Test accuracy : 0.8491766260946192
+Testing duration (s) : 1.5274951457977295
+Classification Report
+             precision    recall  f1-score   support
+
+        0.0    0.82683   0.88382   0.85438     18179
+        1.0    0.87490   0.81445   0.84359     18135
+
+avg / total    0.85084   0.84918   0.84899     36314
+
+Confusion_matrix
+true| predicted label
+    |  0    1
+0   [16067  2112]
+1   [ 3365 14770]
+ *************************************************** 
+ 
+
+dense layers: [16, 4]
+ activations: ['tanh', 'tanh', 'relu']
+ optimizer: adam 
+Training duration (s) : 551.4256496429443
+ Final validation accuracy: 
+0.8535040562469857
+ *************************************************** 
+ 
+Test accuracy : 0.849094013328193
+Testing duration (s) : 1.5775198936462402
+Classification Report
+             precision    recall  f1-score   support
+
+        0.0    0.84951   0.84895   0.84923     18179
+        1.0    0.84868   0.84924   0.84896     18135
+
+avg / total    0.84909   0.84909   0.84909     36314
+
+Confusion_matrix
+true| predicted label
+    |  0    1
+0   [15433  2746]
+1   [ 2734 15401]
+ *************************************************** 
+ 
