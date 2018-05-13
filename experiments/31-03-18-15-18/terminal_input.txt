@@ -1,0 +1,1 @@
+Namespace(criterion=False, eval=None, load_traintest_2npy=['/home/kira/heidelberg-db-mir/mirtarbase_hsa_site.npy', '/home/kira/heidelberg-db-mir/y_mirtarbase_hsa_site.npy'], model_load='conv64-maxpool1d-32-16-1-sgd-relus.h5', outdir='', predict=None, prepare_2npy=None, prepare_custom=None, prepare_custom_eval=None, prepare_custom_y=None, train_2npy=True)
