@@ -75,7 +75,7 @@ def search_params(diry,x_train,y_train,x_test,y_test):
         #[[32,16,8,8],[32,32,16,16,8,4]]:
         #[[64,32,32,16],[64,32,16],[64,32,8],[64,16,16,4],[64,32,16,8,8]]: 
         #[[32,8,4],[32,8],[8,8],[16,4]]:
-            for act in [['relu','relu','sigmoid']]:
+            for act in [['relu','relu','relu']]:
             #[['relu','relu','relu']]:#,['relu','relu','sigmoid'],['tanh','tanh','relu']]:
                 sgd_lr0001_dec1e6_m095= SGD(lr=0.001, decay=1e-6, momentum=0.95, nesterov=True)
                 for opt in ['adam']:# [sgd_lr0001_dec1e6_m09,'rmsprop','adam']:
@@ -154,9 +154,9 @@ def train_model(diry,alin, y_target):
     model.add(Activation('relu'))
     model.add(MaxPooling1D(pool_size=3,padding='same'))
     model.add(Dropout(0.25))
-    model.add(Dense(64))
-    model.add(Activation('relu'))
-    model.add(Dropout(0.25))
+    #model.add(Dense(64))
+    #model.add(Activation('relu'))
+    #model.add(Dropout(0.25))
     model.add(Dense(32))
     model.add(Activation('relu'))
     model.add(Dropout(0.25))
@@ -172,12 +172,12 @@ def train_model(diry,alin, y_target):
     sgd = SGD(lr=0.001, decay=1e-6, momentum=0.9, nesterov=True)
 
     model.compile(loss='mean_squared_error', #'binary_crossentropy',
-              optimizer=sgd,
+              optimizer='adam', #sgd,
               metrics=['accuracy'])
 # train the model
     history = model.fit(alin, y_target,
               batch_size=50,
-              epochs=300,
+              epochs=70,
               validation_split=0.3)
     with open(diry+'history.pickle', 'wb') as f:
         _pickle.dump(history.history, f)
@@ -205,7 +205,7 @@ def train_model(diry,alin, y_target):
     plt.savefig(diry+'loss_plot.png')
     plt.show()
     plt.clf()
-    model.save(diry+'conv64-maxpool1d-32-16-1-sgd-relus.h5')
+    model.save(diry+'conv64-32-8-1.h5')
     return model
 # define a function for data preprocessing
 
