@@ -1,4 +1,4 @@
-# micro-targets
+# CNNtargetMirs
 Here is my bachelor's thesis about pairing microRNAs with the corresponding target mRNAs.
 The task is to make a classifier using deep learning which predicts whether the input gene is a target for the input microRNA or not.
 
